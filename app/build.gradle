@@ -45,13 +45,9 @@ jar {
 }
 
 docker {
-    name 'com.javacodegeeks.examples/docker-hello-world:1'
-    tags 'latest'
-    dockerfile project.file('/app/src/main/docker/Dockerfile')
-    dependsOn tasks.jar
+    name 'com.asyed.examples/docker-hello-world:1'
+    files 'app/build/libs/app-0.1.43.jar'
 }
-
-tasks.getByPath('docker').dependsOn('build')
 
 application {
     // Define the main class for the application.
